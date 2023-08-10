@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "./NavLink";
 import { Outlet } from "react-router";
 
 export default function Navbar() {
