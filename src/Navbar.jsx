@@ -1,15 +1,27 @@
-import supabase from "./supabase";
-import { useNavigate } from "react-router";
+import { Link, NavLink } from "react-router-dom";
+import { Outlet } from "react-router";
 
-export default function Landing() {
-  const navigate = useNavigate();
+export default function Navbar() {
   return (
     <div>
-      <h3 onClick={() => navigate("how")}>How It Works</h3>
-      <h3 onClick={() => navigate("pricing")}>Pricing</h3>
-      <h3 onClick={() => navigate("features")}>Features</h3>
-      <h3 onClick={() => navigate("faq")}>FAQ</h3>
-      <h3 onClick={() => navigate("login")}>Login</h3>
+      <nav>
+        <NavLink to="how">
+          <h3>How It Works</h3>
+        </NavLink>
+        <NavLink to="pricing">
+          <h3>Pricing</h3>
+        </NavLink>
+        <NavLink to="features">
+          <h3>Features</h3>
+        </NavLink>
+        <NavLink to="faq">
+          <h3>FAQ</h3>
+        </NavLink>
+        <NavLink to="login">
+          <h3>Login</h3>
+        </NavLink>
+      </nav>
+      <Outlet />
     </div>
   );
 }
