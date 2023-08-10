@@ -1,5 +1,5 @@
 import supabase from "../supabase";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 export default function Home() {
   const navigate = useNavigate();

@@ -5,6 +5,8 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import supabase from "./supabase";
 import Home from "./screens/Home";
+import Navbar from "./Navbar";
+import Landing from "./Navbar";
 
 function App() {
   const [session, setSession] = useState(false);
@@ -25,14 +27,24 @@ function App() {
 
   if (!session) {
     return (
-      <Auth
-        supabaseClient={supabase}
-        providers={[]}
-        appearance={{
-          theme: ThemeSupa,
-          variables: { default: { colors: { brand: "blue" } } },
-        }}
-      />
+      <BrowserRouter basename="/">
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route
+            path="/login"
+            element={
+              <Auth
+                supabaseClient={supabase}
+                providers={[]}
+                appearance={{
+                  theme: ThemeSupa,
+                  variables: { default: { colors: { brand: "blue" } } },
+                }}
+              />
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     );
   } else {
     return (
@@ -40,7 +52,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
-            path="/About"
+            path="/about"
             element={
               <div>
                 <h1>About</h1>
