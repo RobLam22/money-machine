@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import supabase from "./supabase";
-import Faq from "./screens/Faq";
 import Navbar from "./Navbar";
-import Landing from "./Navbar";
+import Landing from "./screens/Landing";
+import Faq from "./screens/Faq";
 import Dashboard from "./screens/Dashboard";
 
 function App() {
@@ -30,8 +30,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         {!session ? (
-          <Route path="/" element={<Navbar />}>
-            <Route element={<Landing />} />
+          <Route path="/" element={<Navbar session={session} />}>
+            <Route index element={<Landing />} />
             <Route path="faq" element={<Faq />} />
             <Route
               path="login"
