@@ -1,5 +1,6 @@
-import { NavLink } from "./NavLink";
 import { Outlet } from "react-router";
+import { NavLink } from "./NavLink";
+import supabase from "./supabase";
 
 export default function Navbar() {
   return (
