@@ -1,5 +1,3 @@
-import NavbarSession from "../NavbarSession.jsx";
-
 export default function Dashboard() {
   return (
     <>

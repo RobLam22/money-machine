@@ -5,6 +5,7 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import supabase from "./supabase";
 import Navbar from "./Navbar";
+import NavbarSession from "./NavbarSession";
 import Landing from "./screens/Landing";
 import Faq from "./screens/Faq";
 import Dashboard from "./screens/Dashboard";
@@ -28,10 +29,11 @@ function App() {
 
   return (
     <BrowserRouter>
+      {session ? <NavbarSession /> : <Navbar session={session} />}
       <Routes>
         {!session ? (
-          <Route path="/" element={<Navbar session={session} />}>
-            <Route index element={<Landing />} />
+          <>
+            <Route path="/" element={<Landing />} />
             <Route path="faq" element={<Faq />} />
             <Route
               path="login"
@@ -46,7 +48,7 @@ function App() {
                 />
               }
             />
-          </Route>
+          </>
         ) : (
           <Route path="/" element={<Dashboard />} />
         )}
