@@ -51,7 +51,7 @@ function App() {
                 <>
                   <Auth
                     supabaseClient={supabase}
-                    redirectTo="/"
+                    // redirectTo="/"
                     providers={[]}
                     appearance={{
                       theme: ThemeSupa,
@@ -70,7 +70,7 @@ function App() {
               element={
                 <Auth
                   supabaseClient={supabase}
-                  redirectTo="/"
+                  // redirectTo="/login"
                   providers={[]}
                   appearance={{
                     theme: ThemeSupa,
