@@ -212,7 +212,10 @@ export default function Home() {
             data-content="how-it-works"
           >
             <div className="lg:py-6 lg:pr-16">
-              <h2 className="mb-8 font-bold text-black text-4xl primary_text editable">
+              <h2
+                id="howitworks"
+                className="mb-8 font-bold text-black text-4xl primary_text editable"
+              >
                 How it works
               </h2>
               <div className="flex" data-subcontent="step_1">
@@ -356,7 +359,10 @@ export default function Home() {
 
       <div className="py-20 bg-white">
         <div className="flex flex-col max-w-7xl px-12 mx-auto lg:px-8">
-          <h1 className="max-w-md text-5xl font-extrabold text-gray-900 sm:mx-auto lg:max-w-none sm:text-center primary_text editable">
+          <h1
+            id="pricing"
+            className="max-w-md text-5xl font-extrabold text-gray-900 sm:mx-auto lg:max-w-none sm:text-center primary_text editable"
+          >
             Pricing
           </h1>
           <p
@@ -707,7 +713,10 @@ export default function Home() {
 
       <div className="px-4 pt-20 pb-24 mx-auto md:px-2 bg-white">
         <div className="max-w-6xl px-8 mx-auto lg:px-16">
-          <h2 className="mb-4 text-xl font-bold text-gray-900 md:text-3xl primary_text editable">
+          <h2
+            id="faq"
+            className="mb-4 text-xl font-bold text-gray-900 md:text-3xl primary_text editable"
+          >
             Frequently Asked Questions
           </h2>
           <div className="text-sm border-t border-b border-gray-200 divide-y divide-gray-200">
@@ -838,7 +847,7 @@ export default function Home() {
                 // style="display:none"
                 data-subcontent="faq-answers"
               >
-                Using Copymatic would help you to supercharge your content
+                Using All A.I. would help you to supercharge your content
                 production by writing long articles in minutes, not hours. We
                 estimate that it takes about 5 min to write a long-form article.
               </p>

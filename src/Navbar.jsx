@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { Outlet, useNavigate } from "react-router";
+import { Outlet } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { NavLink } from "./NavLink";
 import { SessionsContext } from "./SessionsContext";
 import supabase from "./supabase";
@@ -12,15 +13,17 @@ export default function Navbar() {
       <div className="bg-white">
         <div className="max-w-7xl mx-auto relative text-gray-700 body-font">
           <div className="container flex flex-col flex-wrap items-center justify-between py-5 md:flex-row">
-            <a
-              href="#_"
-              className="flex items-center order-first font-medium text-gray-00 lg:order-none lg:w-auto title-font lg:items-center lg:justify-center"
-            >
+            <a className="flex items-center order-first font-medium text-gray-00 lg:order-none lg:w-auto title-font lg:items-center lg:justify-center">
               <div className="text-center sm:text-left">
                 {SessionCheck.session === null ? (
-                  <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
-                    All A.I.
-                  </h1>
+                  <NavLink to="/">
+                    <h1
+                      href="/"
+                      className="text-2xl font-bold text-gray-900 sm:text-3xl"
+                    >
+                      All A.I.
+                    </h1>
+                  </NavLink>
                 ) : (
                   <>
                     <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
@@ -47,21 +50,24 @@ export default function Navbar() {
                     Home
                   </h3>
                 </NavLink>
-                <NavLink to="howitworks">
-                  <h3 className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable">
-                    How It Works
-                  </h3>
-                </NavLink>
-                <NavLink to="pricing">
-                  <h3 className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable">
-                    Pricing
-                  </h3>
-                </NavLink>
-                <NavLink to="faq">
-                  <h3 className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable">
-                    FAQ
-                  </h3>
-                </NavLink>
+                <a
+                  href="#howitworks"
+                  className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable"
+                >
+                  How It Works
+                </a>
+                <a
+                  href="#pricing"
+                  className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable"
+                >
+                  Pricing
+                </a>
+                <a
+                  href="#faq"
+                  className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable"
+                >
+                  FAQ
+                </a>
               </nav>
               <div className="inline-flex items-center justify-center ml-5 space-x-4 md:space-x-10 md:justify-end">
                 {SessionCheck.session === null ? (
@@ -81,8 +87,8 @@ export default function Navbar() {
                   <NavLink>
                     <h3
                       className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 secondary_text btn-editable"
-                      onClick={() => {
-                        supabase.auth.signOut();
+                      onClick={async () => {
+                        await supabase.auth.signOut();
                         navigate("/");
                       }}
                     >

@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { SessionsContext } from "../../SessionsContext";
+import { checkSessionAndNavigate } from "../../util/SessionUtil";
 import TextProcessor from "../../components/TextProcessor";
 
 const SentenceExpander = () => {
   const [finalResult, setFinalResult] = useState("");
+
+  const navigate = useNavigate();
+  const SessionCheck = useContext(SessionsContext);
+  checkSessionAndNavigate(SessionCheck, navigate);
 
   const systemPrompt = (audience) => `
     You're an advanced AI that specializes in expanding concise sentences by providing additional context and details without altering the original intent.
