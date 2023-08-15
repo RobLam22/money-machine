@@ -4,10 +4,7 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import supabase from "./supabase";
 import Navbar from "./Navbar";
-import Pricing from "./screens/Pricing";
-import Faq from "./screens/Faq";
 import Dashboard from "./screens/Dashboard";
-import Features from "./screens/Features";
 import BlogPostWriter from "./screens/Tools/BlogPostWriter";
 import ArticleGenerator from "./screens/Tools/ArticleGenerator";
 import GrammarFix from "./screens/Tools/GrammarFix";
@@ -28,9 +25,6 @@ function App() {
       <Routes>
         <>
           <Route index path="/" element={<Home />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="features" element={<Features />} />
-          <Route path="faq" element={<Faq />} />
           <Route path="signup" element={<Signup />} />
           <Route
             path="signin"
@@ -38,7 +32,6 @@ function App() {
               <>
                 <Auth
                   supabaseClient={supabase}
-                  // redirectTo="/"
                   providers={[]}
                   appearance={{
                     theme: ThemeSupa,
@@ -48,37 +41,20 @@ function App() {
               </>
             }
           />
-        </>
-        <>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/blog-post-writer" element={<BlogPostWriter />} />
+          <Route path="/article-generator" element={<ArticleGenerator />} />
+          <Route path="/grammar-fix" element={<GrammarFix />} />
           <Route
-            path="/dashboard/blog-post-writer"
-            element={<BlogPostWriter />}
-          />
-          <Route
-            path="/dashboard/article-generator"
-            element={<ArticleGenerator />}
-          />
-          <Route path="/dashboard/grammar-fix" element={<GrammarFix />} />
-          <Route
-            path="/dashboard/product-descriptions"
+            path="/product-descriptions"
             element={<ProductDescriptions />}
           />
+          <Route path="/sentence-rewriter" element={<SentenceRewriter />} />
+          <Route path="/social-media-post" element={<SocialMediaPost />} />
+          <Route path="/sentence-expander" element={<SentenceExpander />} />
+          <Route path="/idea-generator" element={<IdeaGenerator />} />
           <Route
-            path="/dashboardsentence-rewriter"
-            element={<SentenceRewriter />}
-          />
-          <Route
-            path="/dashboard/social-media-post"
-            element={<SocialMediaPost />}
-          />
-          <Route
-            path="/dashboard/sentence-expander"
-            element={<SentenceExpander />}
-          />
-          <Route path="/dashboard/idea-generator" element={<IdeaGenerator />} />
-          <Route
-            path="/dashboard/keyword-suggestions-seo"
+            path="/keyword-suggestions-seo"
             element={<KeywordSuggestionsSEO />}
           />
           <Route

@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { SessionsContext } from "../../SessionsContext";
+import { checkSessionAndNavigate } from "../../util/SessionUtil";
 import TextProcessor from "../../components/TextProcessor";
 
 const SocialMediaPost = () => {
   const [finalResult, setFinalResult] = useState("");
+
+  const navigate = useNavigate();
+  const SessionCheck = useContext(SessionsContext);
+  checkSessionAndNavigate(SessionCheck, navigate);
 
   const systemPrompt = (platform) => `
     You're an advanced AI designed to create captivating social media posts tailored for different platforms. Given the information provided, generate a post suitable for the ${platform} platform.

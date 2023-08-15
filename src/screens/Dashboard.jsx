@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { SessionsContext } from "../SessionsContext";
+import { checkSessionAndNavigate } from "../util/SessionUtil";
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  const SessionCheck = useContext(SessionsContext);
+  checkSessionAndNavigate(SessionCheck, navigate);
 
   return (
     <>

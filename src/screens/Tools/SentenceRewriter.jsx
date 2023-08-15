@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { SessionsContext } from "../../SessionsContext";
+import { checkSessionAndNavigate } from "../../util/SessionUtil";
 import TextProcessor from "../../components/TextProcessor";
 
 const SentenceRewriter = () => {
   const [finalResult, setFinalResult] = useState("");
+
+  const navigate = useNavigate();
+  const SessionCheck = useContext(SessionsContext);
+  checkSessionAndNavigate(SessionCheck, navigate);
 
   const systemPrompt = (tone) => `
     You're an advanced AI designed to rewrite sentences while preserving their original meaning, but adjusting to the specified tone of ${tone}.
