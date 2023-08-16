@@ -1,15 +1,8 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { SessionsContext } from "../../SessionsContext";
-import { checkSessionAndNavigate } from "../../util/SessionUtil";
 import TextProcessor from "../../components/TextProcessor";
 
 const GrammarFix = () => {
   const [finalResult, setFinalResult] = useState("");
-
-  const navigate = useNavigate();
-  const SessionCheck = useContext(SessionsContext);
-  checkSessionAndNavigate(SessionCheck, navigate);
 
   const systemPrompt = (audience) => `
     You are a sophisticated AI designed to generate comprehensive and engaging blog posts.

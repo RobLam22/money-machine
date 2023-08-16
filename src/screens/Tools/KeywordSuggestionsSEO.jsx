@@ -1,15 +1,8 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { SessionsContext } from "../../SessionsContext";
-import { checkSessionAndNavigate } from "../../util/SessionUtil";
 import TextProcessor from "../../components/TextProcessor";
 
 const KeywordSuggestionsSEO = () => {
   const [finalResult, setFinalResult] = useState("");
-
-  const navigate = useNavigate();
-  const SessionCheck = useContext(SessionsContext);
-  checkSessionAndNavigate(SessionCheck, navigate);
 
   const systemPrompt = (industry) => `
     You are an advanced AI trained in SEO best practices. Given a primary keyword or topic, provide a list of related keyword suggestions tailored for the ${industry} industry. 

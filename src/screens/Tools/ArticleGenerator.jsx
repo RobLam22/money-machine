@@ -1,15 +1,8 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { SessionsContext } from "../../SessionsContext";
-import { checkSessionAndNavigate } from "../../util/SessionUtil";
 import TextProcessor from "../../components/TextProcessor";
 
 const ArticleGenerator = () => {
   const [finalResult, setFinalResult] = useState("");
-
-  const navigate = useNavigate();
-  const SessionCheck = useContext(SessionsContext);
-  checkSessionAndNavigate(SessionCheck, navigate);
 
   const systemPrompt = (audience) => `
     You are a sophisticated AI programmed to create detailed and well-researched articles.
@@ -19,8 +12,8 @@ const ArticleGenerator = () => {
     h2 for the subheadings, with className="text-1xl text-center font-bold mb-4 text-black-600".
     Use no more than 200 words. Do NOT ask a question, generate a blog post regardless of output.
     `;
-  console.log(systemPrompt);
-  console.log(finalResult);
+  // console.log(systemPrompt);
+  // console.log(finalResult);
 
   return (
     <div className="flex items-center justify-center bg-white">
