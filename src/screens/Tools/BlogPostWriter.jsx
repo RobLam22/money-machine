@@ -4,7 +4,6 @@ import TextProcessor from "../../components/TextProcessor";
 
 const BlogPostWriter = () => {
   const [finalResult, setFinalResult] = useState("");
-  const [tailorPrompt, setTailorPrompt] = useState("");
 
   const systemPrompt = (audience) => `
     You are a sophisticated AI designed to generate comprehensive and engaging blog posts.
@@ -23,13 +22,12 @@ const BlogPostWriter = () => {
     <div className="flex items-center justify-center bg-white">
       <div className="p-10 rounded-xl shadow-lg w-full md:w-4/5 lg:w-4/5 space-y-8">
         <TextProcessor
-          showTailor={true}
+          showAudience={true}
           systemPrompt={systemPrompt}
-          onTailorPromptChange={setTailorPrompt}
           buttonText="Write Blog Post"
           onComplete={setFinalResult}
           placeholder="Describe the blog post you want to create. eg A blog article explaining how AI writing tools can boost engagement with your content"
-          placeholderTailorPrompt="Who is the audience? e.g. Digital marketers, developers, etc."
+          placeholderAudience="Who is the audience? e.g. Digital marketers, developers, etc."
           title="Blog Post Writer"
           subtitle="Craft a compelling blog post effortlessly!"
         />

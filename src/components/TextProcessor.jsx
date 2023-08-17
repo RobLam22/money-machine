@@ -5,19 +5,17 @@ import "firebase/auth";
 import { addDoc, collection } from "firebase/firestore";
 
 const TextProcessor = ({
-  systemPromptFunction,
+  systemPrompt,
   buttonText,
   onComplete,
   placeholder,
-  placeholderTailorPrompt,
+  placeholderAudience,
   title,
   subtitle,
-  showTailorPrompt = false,
-  tailorPrompt,
-  onTailorPromptChange,
+  showAudience = false,
 }) => {
   const [inputText, setInputText] = useState("");
-  const [customPrompt, setCustomPrompt] = useState("");
+  const [audience, setAudience] = useState("");
   const [result, setResult] = useState("");
 
   const entriesCollectionRef = collection(db, "entries");
@@ -30,7 +28,7 @@ const TextProcessor = ({
   };
 
   const processText = async () => {
-    const fullPrompt = systemPromptFunction(customPrompt);
+    const fullPrompt = systemPrompt(audience);
     const processedResult = await gptUtil(inputText, fullPrompt);
     setResult(processedResult);
     onComplete(processedResult);
@@ -58,15 +56,12 @@ const TextProcessor = ({
         onInput={handleAutoResize}
       />
 
-      {showTailorPrompt && (
+      {showAudience && (
         <textarea
           rows="1"
-          value={tailorPrompt}
-          onChange={(e) => {
-            setCustomPrompt(e.target.value);
-            onTailorPromptChange(e.target.value);
-          }}
-          placeholder={placeholderTailorPrompt}
+          value={audience}
+          onChange={(e) => setAudience(e.target.value)}
+          placeholder={placeholderAudience}
           className="w-3/4 px-4 py-2 border-2 border-blue-400 rounded-lg shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none mb-4 resize-none"
         />
       )}
@@ -82,7 +77,7 @@ const TextProcessor = ({
         Result:
       </h2>
       <div
-        className="text-center"
+        className="text-gray-800 text-center"
         dangerouslySetInnerHTML={{ __html: result }}
       ></div>
       <button

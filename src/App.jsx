@@ -6,6 +6,7 @@ import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
 import Dashboard from "./screens/Dashboard";
+import Entries from "./screens/Entries";
 import ArticleGenerator from "./screens/Tools/ArticleGenerator";
 import Navbar from "./Navbar";
 import Home from "./screens/Home";
@@ -34,6 +35,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/entries"
+            element={
+              <ProtectedRoute>
+                <Entries />
               </ProtectedRoute>
             }
           />
