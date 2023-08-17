@@ -39,6 +39,8 @@ const Signup = () => {
             onChange={(e) => setEmail(e.target.value)}
             className="border p-3"
             type="email"
+            placeholder="email"
+            required
           />
         </div>
         <div className="flex flex-col py-2">
@@ -47,6 +49,8 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
             className="border p-3"
             type="password"
+            placeholder="password"
+            required
           />
         </div>
         <button className="border border-blue-500 bg-blue-600 hover:bg-blue-500 w-full p-4 my-2 text-white">
