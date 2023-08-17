@@ -2,24 +2,56 @@ import { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db, auth } from "../firebase";
 import "firebase/auth";
+import { UserAuth } from "../context/AuthContext";
 
 function Entries() {
+  const { user } = UserAuth();
   const [entries, setEntries] = useState([]);
+  const [selectedEntry, setSelectedEntry] = useState(null);
   const entriesCollectionRef = collection(db, "entries");
+
   useEffect(() => {
     const getEntries = async () => {
+      if (!user) return;
+
       const data = await getDocs(entriesCollectionRef);
-      setEntries(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      const userEntries = data.docs
+        .map((doc) => ({ ...doc.data(), id: doc.id }))
+        .filter((entry) => entry.author && entry.author.id === user.uid);
+      setEntries(userEntries);
     };
+
     getEntries();
-  });
+  }, [user]);
+
+  const extractH1 = (htmlString) => {
+    const div = document.createElement("div");
+    div.innerHTML = htmlString;
+    const h1 = div.querySelector("h1");
+    return h1 ? h1.outerHTML : null;
+  };
 
   return (
-    <div>
-      <h2>Your Entries:</h2>
-      {entries.map((entry) => {
-        return <div>{entry.result}</div>;
-      })}
+    <div className="grid grid-cols-2 h-full">
+      {/* Left side - display list of h1 titles */}
+      <div className="border-r border-gray-300 p-4 overflow-auto">
+        <h2>Your Entries:</h2>
+        {entries.map((entry) => (
+          <div
+            key={entry.id}
+            dangerouslySetInnerHTML={{ __html: extractH1(entry.result) }}
+            onClick={() => setSelectedEntry(entry.result)}
+            className="cursor-pointer hover:bg-gray-100 p-2 rounded"
+          ></div>
+        ))}
+      </div>
+
+      {/* Right side - display the full entry when an h1 is clicked */}
+      <div className="p-4 overflow-auto">
+        {selectedEntry && (
+          <div dangerouslySetInnerHTML={{ __html: selectedEntry }}></div>
+        )}
+      </div>
     </div>
   );
 }
