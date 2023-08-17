@@ -1,18 +1,14 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { SessionsContext } from "../SessionsContext";
-import { checkSessionAndNavigate } from "../util/SessionUtil";
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const SessionCheck = useContext(SessionsContext);
-  checkSessionAndNavigate(SessionCheck, navigate);
 
   return (
     <>
       <div className="grid grid-cols-4 gap-6 p-8">
         <div
-          onClick={() => navigate("blog-post-writer")}
+          onClick={() => navigate("/blog-post-writer")}
           className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
         >
           <h2 className="text-xl font-bold mb-2">Blog Post Writer</h2>
@@ -20,7 +16,7 @@ export default function Dashboard() {
         </div>
 
         <div
-          onClick={() => navigate("article-generator")}
+          onClick={() => navigate("/article-generator")}
           className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
         >
           <h2 className="text-xl font-bold mb-2">Article Generator</h2>
@@ -28,7 +24,7 @@ export default function Dashboard() {
         </div>
 
         <div
-          onClick={() => navigate("grammar-fix")}
+          onClick={() => navigate("/grammar-fix")}
           className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
         >
           <h2 className="text-xl font-bold mb-2">Grammar Fix</h2>
@@ -36,7 +32,7 @@ export default function Dashboard() {
         </div>
 
         <div
-          onClick={() => navigate("product-descriptions")}
+          onClick={() => navigate("/product-descriptions")}
           className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
         >
           <h2 className="text-xl font-bold mb-2">Product Descriptions</h2>
@@ -44,7 +40,7 @@ export default function Dashboard() {
         </div>
 
         <div
-          onClick={() => navigate("sentence-rewriter")}
+          onClick={() => navigate("/sentence-rewriter")}
           className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
         >
           <h2 className="text-xl font-bold mb-2">Sentence Rewriter</h2>
@@ -52,7 +48,7 @@ export default function Dashboard() {
         </div>
 
         <div
-          onClick={() => navigate("social-media-post")}
+          onClick={() => navigate("/social-media-post")}
           className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
         >
           <h2 className="text-xl font-bold mb-2">Social Media Post</h2>
@@ -60,23 +56,14 @@ export default function Dashboard() {
         </div>
 
         <div
-          onClick={() => navigate("sentence-expander")}
+          onClick={() => navigate("/sentence-expander")}
           className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
         >
           <h2 className="text-xl font-bold mb-2">Sentence Expander</h2>
           <p>Expand your sentences with rich details.</p>
         </div>
-
         <div
-          onClick={() => navigate("idea-generator")}
-          className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
-        >
-          <h2 className="text-xl font-bold mb-2">Idea Generator</h2>
-          <p>Spark creativity and come up with novel ideas.</p>
-        </div>
-
-        <div
-          onClick={() => navigate("keyword-suggestions-seo")}
+          onClick={() => navigate("/keyword-suggestions-seo")}
           className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
         >
           <h2 className="text-xl font-bold mb-2">Keyword Suggestions SEO</h2>

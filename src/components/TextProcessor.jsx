@@ -1,5 +1,8 @@
 import { useState } from "react";
 import gptUtil from "../components/gptUtil";
+import { db, auth } from "../firebase";
+import "firebase/auth";
+import { addDoc, collection } from "firebase/firestore";
 
 const TextProcessor = ({
   systemPrompt,
@@ -14,6 +17,15 @@ const TextProcessor = ({
   const [inputText, setInputText] = useState("");
   const [audience, setAudience] = useState("");
   const [result, setResult] = useState("");
+
+  const entriesCollectionRef = collection(db, "entries");
+
+  const createEntry = async () => {
+    await addDoc(entriesCollectionRef, {
+      result,
+      author: { id: auth.currentUser.uid },
+    });
+  };
 
   const processText = async () => {
     const fullPrompt = systemPrompt(audience);
@@ -68,6 +80,12 @@ const TextProcessor = ({
         className="text-gray-800 text-center"
         dangerouslySetInnerHTML={{ __html: result }}
       ></div>
+      <button
+        className="w-3/4 px-4 py-3 text-lg font-bold text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300 active:bg-blue-800 transition-colors"
+        onClick={createEntry}
+      >
+        Save Entry
+      </button>
     </div>
   );
 };
