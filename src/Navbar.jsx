@@ -38,11 +38,18 @@ export default function Navbar() {
             <div className="relative flex flex-col md:flex-row items-center">
               <nav className="flex flex-wrap items-center pt-2 pb-2 pb-5 text-base border-b border-gray-200 md:pt-0 md:mb-0 md:border-b-0 md:pr-3 md:mr-3 md:border-r md:pb-0">
                 {user && (
-                  <NavLink to="/dashboard">
-                    <h3 className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable">
-                      Dashboard
-                    </h3>
-                  </NavLink>
+                  <>
+                    <NavLink to="/dashboard">
+                      <h3 className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable">
+                        Dashboard
+                      </h3>
+                    </NavLink>
+                    <NavLink to="/entries">
+                      <h3 className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable">
+                        Entries
+                      </h3>
+                    </NavLink>
+                  </>
                 )}
                 <NavLink to="/">
                   <h3 className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable">
