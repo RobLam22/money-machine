@@ -4,14 +4,11 @@ import TextProcessor from "../../components/TextProcessor";
 const GrammarFix = () => {
   const [finalResult, setFinalResult] = useState("");
 
-  const systemPrompt = (audience) => `
-    You are a sophisticated AI designed to generate comprehensive and engaging blog posts.
-    Based on the topic provided, write a detailed and informative blog post.
-    Write this in a style which appeals to ${audience}. The output will be in HTML.
-    h1 for the title, which has class="text-2xl font-black mb-6 text-center text-black-600" and
-    h2 for the subheadings, with class="text-1xl text-center font-bold mb-4 text-black-600".
-    The remaining text will be in <p></p> tags. Include <br> AFTER EVERY </p> (</p><br>)
-    Use no more than 200 words. Do NOT ask a question, generate a blog post regardless of output.
+  const systemPrompt = () => `
+    You are a sophisticated AI designed to generate correct grammar. Take the context of the text and ensure output is grammatically correct sentence/sentences.
+    The output will be in HTML.
+    h1 for ONLY THE FIRST first sentence, which has class="text-2xl font-black mb-6 text-center text-black-600".
+    Do NOT ask a question, only correct grammar.
     `;
 
   console.log(systemPrompt);
