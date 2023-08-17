@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className="bg-white">
         <div className="max-w-7xl mx-auto relative text-gray-700 body-font">
           <div className="container flex flex-col flex-wrap items-center justify-between py-5 md:flex-row">
-            <a className="flex items-center order-first font-medium text-gray-00 lg:order-none lg:w-auto title-font lg:items-center lg:justify-center">
+            <div className="flex items-center order-first font-medium text-gray-00 lg:order-none lg:w-auto title-font lg:items-center lg:justify-center">
               <div className="text-center sm:text-left">
                 {!user ? (
                   <NavLink to="/">
@@ -34,7 +34,7 @@ export default function Navbar() {
                   </>
                 )}
               </div>
-            </a>
+            </div>
             <div className="relative flex flex-col md:flex-row items-center">
               <nav className="flex flex-wrap items-center pt-2 pb-2 pb-5 text-base border-b border-gray-200 md:pt-0 md:mb-0 md:border-b-0 md:pr-3 md:mr-3 md:border-r md:pb-0">
                 {user && (
@@ -49,6 +49,11 @@ export default function Navbar() {
                         Entries
                       </h3>
                     </NavLink>
+                    <NavLink to="/subscription">
+                      <h3 className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable">
+                        Subscription
+                      </h3>
+                    </NavLink>
                   </>
                 )}
                 <NavLink to="/">
@@ -56,24 +61,30 @@ export default function Navbar() {
                     Home
                   </h3>
                 </NavLink>
-                <a
-                  href="#howitworks"
-                  className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable"
-                >
-                  How It Works
-                </a>
-                <a
-                  href="#pricing"
-                  className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable"
-                >
-                  Pricing
-                </a>
-                <a
-                  href="#faq"
-                  className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable"
-                >
-                  FAQ
-                </a>
+                {user ? (
+                  <></>
+                ) : (
+                  <>
+                    <a
+                      href="#howitworks"
+                      className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable"
+                    >
+                      How It Works
+                    </a>
+                    <a
+                      href="#pricing"
+                      className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable"
+                    >
+                      Pricing
+                    </a>
+                    <a
+                      href="#faq"
+                      className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable"
+                    >
+                      FAQ
+                    </a>
+                  </>
+                )}
               </nav>
               <div className="inline-flex items-center justify-center ml-5 space-x-4 md:space-x-10 md:justify-end">
                 {!user ? (

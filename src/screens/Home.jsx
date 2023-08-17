@@ -36,9 +36,9 @@ export default function Home() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     data-original-title=""
                     title=""
                   >
@@ -81,9 +81,9 @@ export default function Home() {
                   viewBox="0 0 52 52"
                 >
                   <polygon
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     fill="none"
                     points="29 13 14 29 25 29 23 39 38 23 27 23"
                   ></polygon>
@@ -114,9 +114,9 @@ export default function Home() {
                   viewBox="0 0 52 52"
                 >
                   <polygon
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     fill="none"
                     points="29 13 14 29 25 29 23 39 38 23 27 23"
                   ></polygon>
@@ -145,9 +145,9 @@ export default function Home() {
                   viewBox="0 0 52 52"
                 >
                   <polygon
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     fill="none"
                     points="29 13 14 29 25 29 23 39 38 23 27 23"
                   ></polygon>
@@ -176,9 +176,9 @@ export default function Home() {
                   viewBox="0 0 52 52"
                 >
                   <polygon
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     fill="none"
                     points="29 13 14 29 25 29 23 39 38 23 27 23"
                   ></polygon>
@@ -225,14 +225,14 @@ export default function Home() {
                       <svg
                         className="w-4 text-blue-600"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         viewBox="0 0 24 24"
                       >
                         <line
                           fill="none"
-                          stroke-miterlimit="10"
+                          strokeMiterlimit="10"
                           x1="12"
                           y1="2"
                           x2="12"
@@ -240,7 +240,7 @@ export default function Home() {
                         ></line>
                         <polyline
                           fill="none"
-                          stroke-miterlimit="10"
+                          strokeMiterlimit="10"
                           points="19,15 12,22 5,15"
                         ></polyline>
                       </svg>
@@ -270,14 +270,14 @@ export default function Home() {
                       <svg
                         className="w-4 text-blue-600"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         viewBox="0 0 24 24"
                       >
                         <line
                           fill="none"
-                          stroke-miterlimit="10"
+                          strokeMiterlimit="10"
                           x1="12"
                           y1="2"
                           x2="12"
@@ -285,7 +285,7 @@ export default function Home() {
                         ></line>
                         <polyline
                           fill="none"
-                          stroke-miterlimit="10"
+                          strokeMiterlimit="10"
                           points="19,15 12,22 5,15"
                         ></polyline>
                       </svg>
@@ -320,10 +320,10 @@ export default function Home() {
                       >
                         <polyline
                           fill="none"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-miterlimit="10"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeMiterlimit="10"
                           points="6,12 10,16 18,8"
                         ></polyline>
                       </svg>
@@ -734,9 +734,9 @@ export default function Home() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   aria-hidden="true"
                 >
                   <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -768,9 +768,9 @@ export default function Home() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   aria-hidden="true"
                 >
                   <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -802,9 +802,9 @@ export default function Home() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   aria-hidden="true"
                 >
                   <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -833,9 +833,9 @@ export default function Home() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   aria-hidden="true"
                 >
                   <line x1="12" y1="5" x2="12" y2="19"></line>
