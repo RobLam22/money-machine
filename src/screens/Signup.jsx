@@ -1,10 +1,3 @@
-// <!--
-//   Heads up! 👋
-
-//   Plugins:
-//     - @tailwindcss/forms
-// -->
-
 export default function Signup() {
   return (
     <section className="bg-white">
