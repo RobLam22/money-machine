@@ -52,3 +52,5 @@ it("Should should check if passwords match", async () => {
   expect(input1.value).equals("Testing password");
   expect(input2.value).equals("Testing password");
 });
+
+//
