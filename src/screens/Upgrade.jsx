@@ -51,29 +51,36 @@ export default function Upgrade() {
 
             {/* rhs */}
             <div className="w-1/2 px-8">
-              <ul className="mt-4 space-y-6 text-lg">
-                <li>
-                  <strong className="text-gray-900">
-                    Unlimited text Generations:
-                  </strong>{" "}
-                  No more limitations on word counts.
-                </li>
-                <li>
-                  <strong className="text-gray-900">Save Entries:</strong> Keep
-                  track of all your entries without worrying about losing any.
-                </li>
-                <li>
-                  <strong className="text-gray-900">
+              <div className="mt-10 flex flex-col items-center space-y-8 text-lg">
+                <div className="text-center space-y-4">
+                  <strong className="text-gray-900 text-xl mb-2 border-b border-gray-400 inline-block">
                     Exclusive A.I Tools:
-                  </strong>{" "}
-                  Get access to state-of-the-art AI tools available only to
-                  premium members.
-                </li>
-                <li>
-                  <strong className="text-gray-900">Full Access:</strong> Enjoy
-                  unrestricted access to every corner of the platform.
-                </li>
-              </ul>
+                  </strong>
+                  <ul className="space-y-2 list-none">
+                    <li className="text-gray-700">
+                      <strong>Article Generator</strong>
+                    </li>
+                    <li className="text-gray-700">
+                      <strong>Social Media Posts</strong>
+                    </li>
+                    <li className="text-gray-700">
+                      <strong>Sentence Expander</strong>
+                    </li>
+                    <li className="text-gray-700">
+                      <strong>Keyword Suggestions SEO</strong>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="text-center space-y-4">
+                  <strong className="text-gray-900 text-xl mb-2 border-b border-gray-400 inline-block">
+                    Full Access:
+                  </strong>
+                  <p className="text-gray-700">
+                    Enjoy unrestricted access to every corner of the platform.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
