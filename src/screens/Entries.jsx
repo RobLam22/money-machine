@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db, auth } from "../firebase";
 import "firebase/auth";
 import { UserAuth } from "../context/AuthContext";
@@ -33,6 +33,11 @@ function Entries() {
     return h1 ? h1.outerHTML : null;
   };
 
+  const handleDelete = async (id) => {
+    await deleteDoc(doc(db, "entries", id));
+    setEntries(entries.filter((entry) => entry.id !== id));
+  };
+
   return (
     <div className="grid grid-cols-2 h-full">
       <div className="border-r border-gray-300 p-4 overflow-auto">
@@ -40,12 +45,19 @@ function Entries() {
           Your Entries:
         </h1>
         {entries.map((entry) => (
-          <div
-            key={entry.id}
-            dangerouslySetInnerHTML={{ __html: extractH1(entry.result) }}
-            onClick={() => setSelectedEntry(entry.result)}
-            className="cursor-pointer hover:bg-gray-100 p-2 rounded"
-          ></div>
+          <div key={entry.id} className="mb-4 flex flex-col items-center">
+            <div
+              dangerouslySetInnerHTML={{ __html: extractH1(entry.result) }}
+              onClick={() => setSelectedEntry(entry.result)}
+              className="cursor-pointer hover:bg-gray-100 p-2 rounded text-center"
+            ></div>
+            <button
+              onClick={() => handleDelete(entry.id)}
+              className="mt-2 text-white bg-red-500 hover:bg-red-600 px-3 py-1 rounded transition duration-200"
+            >
+              Delete
+            </button>
+          </div>
         ))}
       </div>
 
