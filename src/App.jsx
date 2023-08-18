@@ -16,6 +16,7 @@ import SentenceRewriter from "./screens/Tools/SentenceRewriter";
 import SocialMediaPost from "./screens/Tools/SocialMediaPost";
 import SentenceExpander from "./screens/Tools/SentenceExpander";
 import KeywordSuggestionsSEO from "./screens/Tools/KeywordSuggestionsSEO";
+import Subscription from "./screens/Subscription";
 
 function App() {
   return (
@@ -34,6 +35,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/subscription"
+            element={
+              <ProtectedRoute>
+                <Subscription />
               </ProtectedRoute>
             }
           />
