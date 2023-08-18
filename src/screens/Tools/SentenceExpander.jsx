@@ -8,7 +8,7 @@ const SentenceExpander = () => {
     You're an advanced AI that specializes in expanding concise sentences by providing additional context and details without altering the original intent.
     Given a sentence, expand it with rich details and in the tone of ${audience}.
     The output will be in HTML.
-    h1 for the title, which has class="text-2xl font-black mb-6 text-center text-black-600" and
+    GENERATE A H1 FOR THE TITLE AT ALL COSTS, which has class="text-2xl font-black mb-6 text-center text-black-600" and
     h2 for the subheadings, with class="text-1xl text-center font-bold mb-4 text-black-600".
     The remaining text will be in <p></p> tags. Include <br> AFTER EVERY </p> (</p><br>)
     Use no more than 200 words. Do NOT ask a question.

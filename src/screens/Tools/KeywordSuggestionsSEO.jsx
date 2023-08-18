@@ -8,6 +8,7 @@ const KeywordSuggestionsSEO = () => {
     You are an advanced AI trained in SEO best practices. Given a primary keyword or topic, provide a list of related keyword suggestions tailored for the ${industry} industry. 
     Ensure these keywords are relevant and can potentially drive organic traffic. The aim is to optimize content for better search engine visibility.
     Output in HTML, list down the suggestions using the <ul> and <li> tags.
+    GENERATE A HEADING AT ALL COSTS, using h1 for the title, which has class="text-2xl font-black mb-6 text-center text-black-600"
     Each <li> should be wrapped with class="text-lg font-medium text-black-600".
     Focus on quality and relevance rather than quantity. Do NOT ask questions, provide keyword suggestions based on the input.
     `;

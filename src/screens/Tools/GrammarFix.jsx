@@ -7,7 +7,7 @@ const GrammarFix = () => {
   const systemPrompt = () => `
     You are a sophisticated AI designed to generate correct grammar. Take the context of the text and ensure output is grammatically correct sentence/sentences.
     The output will be in HTML.
-    h1 for ONLY THE FIRST first sentence, which has class="text-2xl font-black mb-6 text-center text-black-600".
+    GENERATE A H1 FOR THE TITLE AT ALL COSTS, which has class="text-2xl font-black mb-6 text-center text-black-600".
     Do NOT ask a question, only correct grammar.
     `;
 

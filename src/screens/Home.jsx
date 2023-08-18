@@ -62,7 +62,7 @@ export default function Home() {
               data-rounded-max="rounded-full"
             >
               <img
-                src="https://cdn.copymatic.ai/editor/img/rectangle.jpg"
+                src="https://i.ibb.co/5jtgzvx/Screenshot-2023-08-18-at-5-03-30-pm.png"
                 className="rounded-md img-editable"
               />
             </div>
@@ -100,7 +100,7 @@ export default function Home() {
                 data-subcontent="feature-content"
               >
                 {" "}
-                The GPT-3 AI language model is nothing like you've seen before:
+                Our AI language model is nothing like you've seen before:
                 natural, unique and creative.
                 <span className="placeholder small"></span>
                 <span className="placeholder small"></span>
@@ -133,7 +133,7 @@ export default function Home() {
                 data-subcontent="feature-content"
               >
                 {" "}
-                Don't let poor grammar hurt your visitor's trust, Copymatic can
+                Don't let poor grammar hurt your visitor's trust, All A.I. can
                 check and rewrite your content.
               </div>
             </div>
@@ -164,7 +164,7 @@ export default function Home() {
                 data-subcontent="feature-content"
               >
                 {" "}
-                Adjust the creativity level or the tone of voice to generate the
+                Adjust your target audience or the tone of voice to generate the
                 perfect copy for your business.
               </div>
             </div>
@@ -253,13 +253,14 @@ export default function Home() {
                     className="mb-2 text-xl text-gray-900 font-bold primary_text editable"
                     data-subcontent="step-title"
                   >
-                    Sign up for a free trial
+                    Sign Up with Ease
                   </p>
                   <p
                     className="text-base text-gray-600 secondary_text editable"
                     data-subcontent="step-content"
                   >
-                    Enter your email address and create a password.
+                    Register using your details to access our AI-powered content
+                    platform{" "}
                   </p>
                 </div>
               </div>
@@ -298,14 +299,14 @@ export default function Home() {
                     className="mb-2 text-xl text-gray-900 font-bold primary_text editable"
                     data-subcontent="step-title"
                   >
-                    Start watching
+                    Create Your Content
                   </p>
                   <p
                     className="text-base text-gray-600 secondary_text editable"
                     data-subcontent="step-content"
                   >
-                    Browse our library of TV shows and movies and start watching
-                    on your device.
+                    Input a brief prompt, and watch as our AI crafts compelling
+                    content for you instantly
                   </p>
                 </div>
               </div>
@@ -335,13 +336,14 @@ export default function Home() {
                     className="mb-2 text-xl text-gray-900 font-bold primary_text editable"
                     data-subcontent="step-title"
                   >
-                    Cancel anytime
+                    Save & Organise
                   </p>
                   <p
                     className="text-base text-gray-600 secondary_text editable"
                     data-subcontent="step-content"
                   >
-                    You can cancel your free trial at any time.
+                    Store the generated content seamlessly in your personal
+                    library for future reference and organization
                   </p>
                 </div>
               </div>
@@ -349,7 +351,7 @@ export default function Home() {
             <div className="relative">
               <img
                 className="inset-0 object-cover w-full rounded shadow-lg h-96 lg:absolute lg:h-full img-editable"
-                src="https://cdn.copymatic.ai/editor/img/rectangle-v.jpg"
+                src="https://i.ibb.co/2y9sF52/Screenshot-2023-08-18-at-4-49-59-pm.png"
                 alt=""
               />
             </div>
@@ -541,7 +543,7 @@ export default function Home() {
                           className="text-gray-700 text-base w-full secondary_text editable"
                           data-subcontent="feature"
                         >
-                          Unlimited chat access
+                          Save Entries
                         </p>
                       </span>
                     </li>
@@ -560,7 +562,7 @@ export default function Home() {
                           className="text-gray-700 text-base w-full secondary_text editable"
                           data-subcontent="feature"
                         >
-                          Unlimited projects
+                          Exclusive A.I tools
                         </p>
                       </span>
                     </li>
@@ -596,7 +598,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="w-full max-w-md px-0 mx-auto mb-6 w-1/3 px-3 mb-0">
+            {/* <div className="w-full max-w-md px-0 mx-auto mb-6 w-1/3 px-3 mb-0">
               <div className="flex flex-col h-full mb-10 bg-white border-2 border-gray-200 rounded-lg shadow-sm sm:mb-0">
                 <div className="px-10 pt-10">
                   <span className="px-3 py-1 text-sm font-medium text-blue-600 bg-blue-50 rounded-full text-uppercase secondary_text bg-editable editable">
@@ -706,7 +708,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -848,8 +850,8 @@ export default function Home() {
                 data-subcontent="faq-answers"
               >
                 Using All A.I. would help you to supercharge your content
-                production by writing long articles in minutes, not hours. We
-                estimate that it takes about 5 min to write a long-form article.
+                production by writing long articles in seconds, not hours. Your
+                article should be generated within the blink of an eye!
               </p>
             </div>
           </div>
