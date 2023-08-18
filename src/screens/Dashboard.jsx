@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -71,6 +72,7 @@ export default function Dashboard() {
           </p>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 }
