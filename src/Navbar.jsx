@@ -49,18 +49,18 @@ export default function Navbar() {
                         Entries
                       </h3>
                     </NavLink>
-                    <NavLink to="/subscription">
+                    <NavLink to="/upgrade">
                       <h3 className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable">
-                        Subscription
+                        Upgrade
                       </h3>
                     </NavLink>
                   </>
                 )}
-                <NavLink to="/">
+                {/* <NavLink to="/">
                   <h3 className="mr-6 font-medium leading-6 text-gray-600 hover:text-gray-900 secondary_text link-editable editable">
                     Home
                   </h3>
-                </NavLink>
+                </NavLink> */}
                 {user ? (
                   <></>
                 ) : (

@@ -16,7 +16,7 @@ import SentenceRewriter from "./screens/Tools/SentenceRewriter";
 import SocialMediaPost from "./screens/Tools/SocialMediaPost";
 import SentenceExpander from "./screens/Tools/SentenceExpander";
 import KeywordSuggestionsSEO from "./screens/Tools/KeywordSuggestionsSEO";
-import Subscription from "./screens/Subscription";
+import Upgrade from "./screens/Upgrade";
 
 function App() {
   return (
@@ -28,8 +28,6 @@ function App() {
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
 
-          <Route path="/article-generator" element={<ArticleGenerator />} />
-
           <Route
             path="/dashboard"
             element={
@@ -39,10 +37,18 @@ function App() {
             }
           />
           <Route
-            path="/subscription"
+            path="/upgrade"
             element={
               <ProtectedRoute>
-                <Subscription />
+                <Upgrade />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/article-generator"
+            element={
+              <ProtectedRoute>
+                <ArticleGenerator />
               </ProtectedRoute>
             }
           />
