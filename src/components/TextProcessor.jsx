@@ -4,6 +4,7 @@ import { db, auth } from "../firebase";
 import "firebase/auth";
 import { addDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const TextProcessor = ({
   systemPrompt,
@@ -103,6 +104,7 @@ const TextProcessor = ({
       >
         Save Entry
       </button>
+      <ToastContainer />
     </div>
   );
 };

@@ -11,7 +11,9 @@ function Entries() {
   const entriesCollectionRef = collection(db, "entries");
 
   useEffect(() => {
+    console.log("test");
     const getEntries = async () => {
+      console.log(user);
       if (!user) return;
 
       const data = await getDocs(entriesCollectionRef);
@@ -22,7 +24,7 @@ function Entries() {
     };
 
     getEntries();
-  }, [user]);
+  }, []);
 
   const extractH1 = (htmlString) => {
     const div = document.createElement("div");
@@ -34,7 +36,7 @@ function Entries() {
   return (
     <div className="grid grid-cols-2 h-full">
       <div className="border-r border-gray-300 p-4 overflow-auto">
-        <h1 class="text-2xl font-black mb-6 text-center text-blue-600">
+        <h1 className="text-2xl font-black mb-6 text-center text-blue-600">
           Your Entries:
         </h1>
         {entries.map((entry) => (
