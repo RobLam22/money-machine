@@ -33,9 +33,10 @@ function Entries() {
 
   return (
     <div className="grid grid-cols-2 h-full">
-      {/* Left side - display list of h1 titles */}
       <div className="border-r border-gray-300 p-4 overflow-auto">
-        <h2>Your Entries:</h2>
+        <h1 class="text-2xl font-black mb-6 text-center text-blue-600">
+          Your Entries:
+        </h1>
         {entries.map((entry) => (
           <div
             key={entry.id}
@@ -46,10 +47,12 @@ function Entries() {
         ))}
       </div>
 
-      {/* Right side - display the full entry when an h1 is clicked */}
-      <div className="p-4 overflow-auto">
+      <div className="p-4 overflow-auto flex items-center justify-center">
         {selectedEntry && (
-          <div dangerouslySetInnerHTML={{ __html: selectedEntry }}></div>
+          <div
+            className="text-center"
+            dangerouslySetInnerHTML={{ __html: selectedEntry }}
+          ></div>
         )}
       </div>
     </div>
