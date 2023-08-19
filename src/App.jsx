@@ -3,7 +3,7 @@ import Signup from "./components/Signup";
 import { Route, Routes } from "react-router-dom";
 import { AuthContextProvider, UserAuth } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
-import SubscriptionGuard from "./components/SubscriptionGuard";
+// import SubscriptionGuard from "./components/SubscriptionGuard";
 import "./App.css";
 import Dashboard from "./screens/Dashboard";
 import Entries from "./screens/Entries";
@@ -90,41 +90,33 @@ function App() {
           <Route
             path="/article-generator"
             element={
-              <SubscriptionGuard>
-                <ProtectedRoute>
-                  <ArticleGenerator />
-                </ProtectedRoute>
-              </SubscriptionGuard>
+              <ProtectedRoute>
+                <ArticleGenerator />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/social-media-post"
             element={
-              <SubscriptionGuard>
-                <ProtectedRoute>
-                  <SocialMediaPost />
-                </ProtectedRoute>
-              </SubscriptionGuard>
+              <ProtectedRoute>
+                <SocialMediaPost />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/sentence-expander"
             element={
-              <SubscriptionGuard>
-                <ProtectedRoute>
-                  <SentenceExpander />
-                </ProtectedRoute>
-              </SubscriptionGuard>
+              <ProtectedRoute>
+                <SentenceExpander />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/keyword-suggestions-seo"
             element={
-              <SubscriptionGuard>
-                <ProtectedRoute>
-                  <KeywordSuggestionsSEO />
-                </ProtectedRoute>
-              </SubscriptionGuard>
+              <ProtectedRoute>
+                <KeywordSuggestionsSEO />
+              </ProtectedRoute>
             }
           />
         </Routes>
