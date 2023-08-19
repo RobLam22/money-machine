@@ -1,8 +1,9 @@
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import { Route, Routes } from "react-router-dom";
-import { AuthContextProvider } from "./context/AuthContext";
+import { AuthContextProvider, UserAuth } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import SubscriptionGuard from "./components/SubscriptionGuard";
 import "./App.css";
 import Dashboard from "./screens/Dashboard";
 import Entries from "./screens/Entries";
@@ -16,7 +17,7 @@ import SentenceRewriter from "./screens/Tools/SentenceRewriter";
 import SocialMediaPost from "./screens/Tools/SocialMediaPost";
 import SentenceExpander from "./screens/Tools/SentenceExpander";
 import KeywordSuggestionsSEO from "./screens/Tools/KeywordSuggestionsSEO";
-import Subscription from "./screens/Subscription";
+import Upgrade from "./screens/Upgrade";
 
 function App() {
   return (
@@ -28,8 +29,6 @@ function App() {
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
 
-          <Route path="/article-generator" element={<ArticleGenerator />} />
-
           <Route
             path="/dashboard"
             element={
@@ -39,13 +38,14 @@ function App() {
             }
           />
           <Route
-            path="/subscription"
+            path="/upgrade"
             element={
               <ProtectedRoute>
-                <Subscription />
+                <Upgrade />
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/entries"
             element={
@@ -62,14 +62,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route
-            path="/article-generator"
-            element={
-              <ProtectedRoute>
-                <ArticleGenerator />
-              </ProtectedRoute>
-            }
-          />
+
           <Route
             path="/grammar-fix"
             element={
@@ -95,27 +88,43 @@ function App() {
             }
           />
           <Route
+            path="/article-generator"
+            element={
+              <SubscriptionGuard>
+                <ProtectedRoute>
+                  <ArticleGenerator />
+                </ProtectedRoute>
+              </SubscriptionGuard>
+            }
+          />
+          <Route
             path="/social-media-post"
             element={
-              <ProtectedRoute>
-                <SocialMediaPost />
-              </ProtectedRoute>
+              <SubscriptionGuard>
+                <ProtectedRoute>
+                  <SocialMediaPost />
+                </ProtectedRoute>
+              </SubscriptionGuard>
             }
           />
           <Route
             path="/sentence-expander"
             element={
-              <ProtectedRoute>
-                <SentenceExpander />
-              </ProtectedRoute>
+              <SubscriptionGuard>
+                <ProtectedRoute>
+                  <SentenceExpander />
+                </ProtectedRoute>
+              </SubscriptionGuard>
             }
           />
           <Route
             path="/keyword-suggestions-seo"
             element={
-              <ProtectedRoute>
-                <KeywordSuggestionsSEO />
-              </ProtectedRoute>
+              <SubscriptionGuard>
+                <ProtectedRoute>
+                  <KeywordSuggestionsSEO />
+                </ProtectedRoute>
+              </SubscriptionGuard>
             }
           />
         </Routes>

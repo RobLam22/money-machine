@@ -1,8 +1,35 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { query, where, getDocs } from "firebase/firestore";
+import { db, auth } from "../firebase";
+import "firebase/auth";
+import { collection } from "firebase/firestore";
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  const statusCollectionRef = collection(db, "status");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const user = auth.currentUser;
+
+  useEffect(() => {
+    if (user) {
+      const q = query(statusCollectionRef, where("id", "==", user.uid));
+
+      const fetchData = async () => {
+        const querySnapshot = await getDocs(q);
+        if (!querySnapshot.empty) {
+          const data = querySnapshot.docs[0].data();
+          console.log("Fetched document data:", data);
+          setIsSubscribed(data.subscribed);
+        } else {
+          console.log("No matching document for user:", user.uid);
+          setIsSubscribed(false);
+        }
+      };
+      fetchData();
+    }
+  }, [user]);
 
   return (
     <>
@@ -13,14 +40,6 @@ export default function Dashboard() {
         >
           <h2 className="text-xl font-bold mb-2">Blog Post Writer</h2>
           <p>Generate engaging blog posts effortlessly.</p>
-        </div>
-
-        <div
-          onClick={() => navigate("/article-generator")}
-          className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
-        >
-          <h2 className="text-xl font-bold mb-2">Article Generator</h2>
-          <p>Create informative articles in seconds.</p>
         </div>
 
         <div
@@ -48,26 +67,87 @@ export default function Dashboard() {
         </div>
 
         <div
-          onClick={() => navigate("/social-media-post")}
-          className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
+          onClick={isSubscribed ? () => navigate("/article-generator") : null}
+          className={`cursor-pointer border rounded-lg p-4 ${
+            isSubscribed
+              ? "hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
+              : "bg-gray-300 cursor-not-allowed"
+          }`}
+          title={isSubscribed ? "" : "You need to upgrade to use this tool."}
         >
-          <h2 className="text-xl font-bold mb-2">Social Media Post</h2>
-          <p>Craft engaging posts for your social media profiles.</p>
+          <h2
+            className={`text-xl font-bold mb-2 ${
+              isSubscribed ? "" : "text-gray-500"
+            }`}
+          >
+            Article Generator
+          </h2>
+          <p className={`${isSubscribed ? "" : "text-gray-500"}`}>
+            Create informative articles in seconds.
+          </p>
         </div>
 
         <div
-          onClick={() => navigate("/sentence-expander")}
-          className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
+          onClick={isSubscribed ? () => navigate("/social-media-post") : null}
+          className={`cursor-pointer border rounded-lg p-4 ${
+            isSubscribed
+              ? "hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
+              : "bg-gray-300 cursor-not-allowed"
+          }`}
+          title={isSubscribed ? "" : "You need to upgrade to use this tool."}
         >
-          <h2 className="text-xl font-bold mb-2">Sentence Expander</h2>
-          <p>Expand your sentences with rich details.</p>
+          <h2
+            className={`text-xl font-bold mb-2 ${
+              isSubscribed ? "" : "text-gray-500"
+            }`}
+          >
+            Social Media Post
+          </h2>
+          <p className={`${isSubscribed ? "" : "text-gray-500"}`}>
+            Craft engaging posts for your social media profiles.
+          </p>
         </div>
+
         <div
-          onClick={() => navigate("/keyword-suggestions-seo")}
-          className="cursor-pointer border rounded-lg p-4 hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
+          onClick={isSubscribed ? () => navigate("/sentence-expander") : null}
+          className={`cursor-pointer border rounded-lg p-4 ${
+            isSubscribed
+              ? "hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
+              : "bg-gray-300 cursor-not-allowed"
+          }`}
+          title={isSubscribed ? "" : "You need to upgrade to use this tool."}
         >
-          <h2 className="text-xl font-bold mb-2">Keyword Suggestions SEO</h2>
-          <p>
+          <h2
+            className={`text-xl font-bold mb-2 ${
+              isSubscribed ? "" : "text-gray-500"
+            }`}
+          >
+            Sentence Expander
+          </h2>
+          <p className={`${isSubscribed ? "" : "text-gray-500"}`}>
+            Expand your sentences with rich details.
+          </p>
+        </div>
+
+        <div
+          onClick={
+            isSubscribed ? () => navigate("/keyword-suggestions-seo") : null
+          }
+          className={`cursor-pointer border rounded-lg p-4 ${
+            isSubscribed
+              ? "hover:bg-blue-600 hover:text-white transition ease-in-out duration-150"
+              : "bg-gray-300 cursor-not-allowed"
+          }`}
+          title={isSubscribed ? "" : "You need to upgrade to use this tool."}
+        >
+          <h2
+            className={`text-xl font-bold mb-2 ${
+              isSubscribed ? "" : "text-gray-500"
+            }`}
+          >
+            Keyword Suggestions SEO
+          </h2>
+          <p className={`${isSubscribed ? "" : "text-gray-500"}`}>
             Optimize your content for search engines with keyword suggestions.
           </p>
         </div>

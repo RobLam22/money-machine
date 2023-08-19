@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -477,18 +478,18 @@ export default function Home() {
                     </li>
                   </ul>
                   <div className="mt-8">
-                    <a
-                      href="#_"
+                    <Link
+                      to="/signup"
                       className="inline-flex items-center justify-center w-full px-4 py-3 text-base font-semibold text-white transition duration-150 ease-in-out bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 active:bg-gray-900 focus:outline-none focus:bg-blue-700 disabled:opacity-25 btn-editable"
                     >
                       Get Started
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
             <div className="w-full max-w-md px-0 mx-auto mb-6 w-1/3 px-3 mb-0">
-              <div className="flex flex-col h-full mb-10 bg-white border-2 border-gray-200 rounded-lg shadow-sm ring-8 ring-opacity-25 ring-blue-300 sm:mb-0">
+              <div className="flex flex-col h-full mb-10 bg-white border-2 border-gray-200 rounded-lg shadow-sm sm:mb-0">
                 <div className="px-10 pt-10">
                   <span className="px-3 py-1 text-sm font-medium text-blue-600 bg-blue-50 rounded-full leading-nine text-uppercase secondary_text bg-editable editable">
                     Pro
@@ -497,7 +498,7 @@ export default function Home() {
 
                 <div className="px-10 mt-4">
                   <span className="text-5xl text-black font-bold editable">
-                    $10
+                    $20
                   </span>
                   <span className="text-xl font-bold text-gray-500">/mo</span>
                 </div>
@@ -588,12 +589,12 @@ export default function Home() {
                   </ul>
 
                   <div className="mt-8">
-                    <a
-                      href="#_"
+                    <Link
+                      to="/signup"
                       className="inline-flex items-center justify-center w-full px-4 py-3 text-base font-semibold text-white transition duration-150 ease-in-out bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 active:bg-gray-900 focus:outline-none focus:bg-blue-700 disabled:opacity-25 btn-editable"
                     >
                       Get Started
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

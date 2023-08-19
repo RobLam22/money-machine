@@ -35,19 +35,19 @@ All the users responses from A.I. can be saved and added to their Entries page. 
 
 ## Final Thoughts
 
-- "Su Insert stuff here" - Su
-
 "I really wanted to try to grasp all the React functionality in this project. Can I say I left this project with a solid understanding of React? No? Can I say I built a React app from the ground up? Yes with an asterisk.
 
 Maybe it's the imposter syndrome kicking in but I felt like this project I was always out of my element from start to finish. There is a sense of acheivement of completing the project, this project has really highlighted that this career choice is always going to be a learning experience. Room for growth, existential fulfillment perhaps.
 
 All jokes and cander aside, I really enjoyed working on the project with a dream partner like Su. It really made things easy and although we worked together previously, this just really highlighted the positives of working in a team." - Rob
 
+"We set an ambitious goal for ourselves when we chose to build this app, and there were moments we doubted if we'd ever pull through given all the unexpected challenges that came our way. While this project helped deepen my grasp on React, cloud databases, and API integration, I realise I still have a lot to learn. Also big shoutout to Rob, his dedication and commitment made tackling the challenging of our crazy app building journey not only bearable, but truly enjoyable. Team work really does make the dream work." - Su
+
 ## Authors
 
 Money Machine.
 
-- Su Kayali, A.I. Integration Master. [@sude](https://www.github.com/sude)
-- Robert Lam, Master of None. [@RobLam22](https://www.github.com/RobLam22)
+- Su Kayalidere, A.I. Integration Master. [@sude](https://www.github.com/kayasuu)
+- Robert Lam, All-Round Coding Wizard. [@RobLam22](https://www.github.com/RobLam22)
 
 //
